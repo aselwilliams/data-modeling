@@ -1,0 +1,70 @@
+---------------Features---------------------
+users can sign into the app with their email and password
+
+users can create recipes with ingredients and instructions
+
+recipes can be marked as public or private
+
+users can view other people’s recipes
+
+ingredients from recipes can be added to user’s grocery lists
+
+users can create their own occasions and assign recipes to occasions
+
+-----------------Brainstorming--------------------
+users
+-user can log in (email & pw col)
+-create recipes
+-users can view other people’s recipes
+-user can add ingredients 
+
+grocery list
+-ingredients from recipes can be added
+
+recipes
+-can be marked as public or private
+
+occasions
+-assign recipes to occasions
+
+-------------Designing Tables----------------
+users
+-user_id PRIMARY KEY
+-email VARCHAR(50)
+-password VARCHAR(50)
+
+ingredients
+-ingredient_id PRIMARY KEY,
+-name VARCHAR(50),
+-price INTEGER,
+-origin VARCHAR(50)
+
+
+//middle Table
+recipe_ingredients
+-recipe_ingredients_id PRIMARY KEY,
+-recipe_id FOREIGN KEY recipes(recipe_id)
+-ingredient_id FOREIGN KEY ingredients(ingredient_id)
+
+
+recipes
+-recipe_id PRIMARY KEY,
+-name VARCHAR(50),
+-user_id FOREIGN KEY users(user_id),
+-content TEXT
+
+
+//middle table
+recipe_occasions
+-recipes_occasions_id PRIMARY KEY,
+-recipe_id FOREIGN KEY recipes(recipe_id)
+-occasion_id FOREIGN KEY occasions(occasion_id)
+
+
+occasions
+-occasion_id PRIMARY KEY,
+-name VARCHAR(50)
+
+
+//Link to the db_design
+file:///Users/aselwilliams/Downloads/recipes-dbdesigner.pdf
